@@ -220,6 +220,23 @@ ul.affil li {
   font-size: 0.95rem;
 }
 
+/* ---------- CV-style lists (education, career, grants, pubs) ---------- */
+
+ul.cv {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+ul.cv li {
+  padding: 10px 0;
+  border-bottom: 1px dotted var(--border);
+  font-size: 0.94rem;
+  line-height: 1.55;
+}
+ul.cv li:last-child { border-bottom: none; }
+ul.cv strong { color: var(--fg); }
+ul.cv em { color: var(--fg-muted); font-style: italic; }
+
 /* ---------- footer ---------- */
 
 footer {
