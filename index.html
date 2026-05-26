@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Seonggeun Yoo — engineer & researcher in broadcasting systems, sports performance analytics, and wearable health sensing." />
+  <title>Seonggeun Yoo · 유성근</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main>
+
+  <header>
+    <h1>Seonggeun Yoo <span class="hangul">유성근</span></h1>
+    <p class="tagline">
+      Engineer · Researcher · Inventor<br />
+      Seoul, Republic of Korea
+    </p>
+    <nav class="links">
+      <a href="https://github.com/zobithecat">GitHub</a>
+      <a href="mailto:orcogre@gmail.com">Email</a>
+      <a href="#patents">Patents</a>
+      <a href="#projects">Projects</a>
+    </nav>
+  </header>
+
+  <section id="about">
+    <h2>About</h2>
+    <p>
+      Engineer and inventor working at the intersection of
+      <strong>broadcasting systems</strong>,
+      <strong>sports performance analytics</strong>,
+      <strong>wearable health sensing</strong>, and
+      <strong>computer vision</strong>.  Sixteen granted patents
+      spanning IoT safety, multi-camera time synchronisation,
+      bobsled / luge training analytics, AVM-based privacy
+      protection, and real-time biosignal extraction from moving
+      subjects.  Currently building consumer-tech infrastructure at
+      VENDIT Inc.; this page lists side and prior research that's
+      free to share.
+    </p>
+    <p>
+      I'm interested in software-defined radio, low-cost
+      reproducible measurement systems, and turning legacy /
+      poorly-documented protocols into open code.  Currently
+      writing up the first packaged end-to-end open-source
+      receiver for Korean T-DMB
+      (<a href="#tdmb">project below</a>).
+    </p>
+  </section>
+
+  <section id="projects">
+    <h2>Selected open-source projects</h2>
+
+    <article id="tdmb">
+      <h3>
+        <a href="https://github.com/zobithecat/airspy-mini-dmb">
+          airspy-mini-dmb
+        </a>
+        <span class="year">2026</span>
+      </h3>
+      <p class="oneline">
+        End-to-end open-source software receiver for Korean
+        Terrestrial DMB on low-cost SDR hardware.
+      </p>
+      <p>
+        Pure-Python pipeline: ETI parsing → Fast Information
+        Channel decode → Reed-Solomon (204, 188) + Forney
+        convolutional deinterleaver outer FEC → MPEG-4 SL packet
+        demux → H.264 elementary stream reconstruction → ffmpeg
+        decode.  Verified on a 30 MB on-air capture of YTN DMB
+        (channel K8B, 183.008 MHz) with an Airspy Mini and an
+        indoor antenna: 87.3 % of Reed-Solomon blocks decode
+        cleanly and ffmpeg renders QVGA H.264 frames containing
+        recognisable Korean broadcast content.
+      </p>
+      <p>
+        Papers (preprint + Korean companion) are in the
+        <a href="https://github.com/zobithecat/airspy-mini-dmb/tree/main/paper">
+          paper/</a> directory.
+      </p>
+      <p class="meta">
+        <strong>Stack:</strong> Python · C++ · LaTeX ·
+        Airspy Mini SDR · ETI(NI) · ETSI EN 300 401 ·
+        ETSI TS 102 427/428 · TTAK.KO-07.0026 · ISO/IEC 14496-1
+      </p>
+    </article>
+  </section>
+
+  <section id="research-areas">
+    <h2>Research areas (from patents)</h2>
+
+    <div class="area">
+      <h3>Broadcasting &amp; streaming media</h3>
+      <p>
+        Joint-broadcasting devices, gesture-controlled personal
+        broadcasting, metadata-driven streaming video editing,
+        and (current side work) software-defined T-DMB reception
+        end-to-end.
+      </p>
+    </div>
+
+    <div class="area">
+      <h3>Sports performance analytics</h3>
+      <p>
+        Multi-year programme of training and start-phase analysis
+        for the Korean national bobsled / luge teams: technique-
+        training systems, multi-camera time sync via optical time
+        codes, start-phase analytic data generation, performance
+        analysis pipelines, and steerable immersive content for
+        motion simulators.
+      </p>
+    </div>
+
+    <div class="area">
+      <h3>Wearable health sensing</h3>
+      <p>
+        Machine-learning-based SpO<sub>2</sub> measurement on
+        wearable devices, and biosignal extraction from users in
+        motion — pushing PPG-style sensing past the usual stationary
+        assumption.
+      </p>
+    </div>
+
+    <div class="area">
+      <h3>Computer vision &amp; privacy</h3>
+      <p>
+        Pose-aware video portrait-right protection
+        (faces/identifying-pose redaction), and panoramic indoor
+        scene synthesis.
+      </p>
+    </div>
+
+    <div class="area">
+      <h3>IoT &amp; safety systems</h3>
+      <p>
+        Worksite-hazard warning device, device authentication for
+        IoT networks, and pattern-display window systems.
+      </p>
+    </div>
+  </section>
+
+  <section id="patents">
+    <h2>Patents (16 granted)</h2>
+    <p class="muted">
+      Korean patent number, grant date, assignee, title.  Reverse
+      chronological.
+    </p>
+
+    <ol class="patents" reversed>
+
+      <li>
+        <span class="patno">10-2916-2430000</span> ·
+        <span class="date">2026-01-19</span> ·
+        <span class="assignee">이모코그 / Seonggeun Yoo</span>
+        <div class="ptitle">
+          움직임이 있는 사용자로부터 생체 신호를 측정하는 방법 및
+          그를 이용한 디바이스
+        </div>
+      </li>
+
+      <li>
+        <span class="patno">10-2900-2470000</span> ·
+        <span class="date">2025-12-10</span> ·
+        <span class="assignee">모비두 (MOBIDOO)</span>
+        <div class="ptitle">
+          메타데이터를 이용한 스트리밍 영상의 편집 방법 및 그 장치
+        </div>
+      </li>
+
+      <li>
+        <span class="patno">10-2739-3440000</span> ·
+        <span class="date">2024-12-03</span> ·
+        <span class="assignee">KIST</span>
+        <div class="ptitle">
+          조종 가능한 실감 영상 콘텐츠의 생성 방법 및 이의 모션
+          시뮬레이션 시스템
+        </div>
+      </li>
+
+      <li>
+        <span class="patno">10-2734-2340000</span> ·
+        <span class="date">2024-11-21</span> ·
+        <span class="assignee">KIST</span>
+        <div class="ptitle">
+          썰매 종목의 스타트 구간 퍼포먼스를 분석하는 방법 및 장치
+        </div>
+      </li>
+
+      <li>
+        <span class="patno">10-2690-4650000</span> ·
+        <span class="date">2024-07-26</span> ·
+        <span class="assignee">이모코그 (Emocog)</span>
+        <div class="ptitle">
+          머신 러닝 기법을 이용하여 웨어러블 디바이스에서 실시간으로
+          산소포화도를 측정하는 방법 및 이를 이용한 산소포화도 측정
+          장치
+        </div>
+      </li>
+
+      <li>
+        <span class="patno">10-2592-2980000</span> ·
+        <span class="date">2023-10-17</span> ·
+        <span class="assignee">KIST</span>
+        <div class="ptitle">
+          썰매 종목 스타트 구간의 분석 데이터 생성 시스템 및 방법
+        </div>
+      </li>
+
+      <li>
+        <span class="patno">10-2531-2870000</span> ·
+        <span class="date">2023-05-08</span> ·
+        <span class="assignee">KIST</span>
+        <div class="ptitle">
+          자세 인식 기반의 영상 초상권 보호 방법 및 장치
+        </div>
+      </li>
+
+      <li>
+        <span class="patno">10-2354-5900000</span> ·
+        <span class="date">2022-01-19</span> ·
+        <span class="assignee">KIST</span>
+        <div class="ptitle">
+          썰매 종목 스타트 구간의 훈련을 지원하는 시스템 및 방법
+        </div>
+      </li>
+
+      <li>
+        <span class="patno">10-2331-5760000</span> ·
+        <span class="date">2021-11-23</span> ·
+        <span class="assignee">서울과학기술대학교 산학협력단</span>
+        <div class="ptitle">
+          패턴 디스플레이 창문 및 패턴 디스플레이 창문용 패턴 제공
+          시스템
+        </div>
+      </li>
+
+      <li>
+        <span class="patno">10-2294-5240000</span> ·
+        <span class="date">2021-08-23</span> ·
+        <span class="assignee">KIST</span>
+        <div class="ptitle">
+          광학 타임 코드를 이용한 다중 카메라의 시간 동기화 시스템 및
+          방법
+        </div>
+      </li>
+
+      <li>
+        <span class="patno">10-2253-8160000</span> ·
+        <span class="date">2021-05-13</span> ·
+        <span class="assignee">KIST</span>
+        <div class="ptitle">
+          썰매 종목의 기술 훈련을 지원하는 시스템 및 방법
+        </div>
+      </li>
+
+      <li>
+        <span class="patno">10-2125-6400000</span> ·
+        <span class="date">2020-06-16</span> ·
+        <span class="assignee">서울과학기술대학교 산학협력단</span>
+        <div class="ptitle">
+          사용자 제스처를 이용한 개인방송 제어 시스템
+        </div>
+      </li>
+
+      <li>
+        <span class="patno">10-2115-0980000</span> ·
+        <span class="date">2020-05-19</span> ·
+        <span class="assignee">서울과학기술대학교 산학협력단</span>
+        <div class="ptitle">
+          실내 공간용 파노라마 영상 생성 시스템 및 방법
+        </div>
+      </li>
+
+      <li>
+        <span class="patno">10-2101-7750000</span> ·
+        <span class="date">2020-04-10</span> ·
+        <span class="assignee">서울과학기술대학교 산학협력단</span>
+        <div class="ptitle">
+          합동 방송을 제공하는 장치 및 방법
+        </div>
+      </li>
+
+      <li>
+        <span class="patno">10-2034-5540000</span> ·
+        <span class="date">2019-10-15</span>
+        <span class="assignee">서울과학기술대학교 / 엠디자인</span>
+        <div class="ptitle">
+          사물 인터넷 네트워크 내 디바이스 인증 방법 및 시스템
+        </div>
+      </li>
+
+      <li>
+        <span class="patno">10-2033-1180000</span> ·
+        <span class="date">2019-10-10</span> ·
+        <span class="assignee">엠디자인</span>
+        <div class="ptitle">
+          작업 현장의 위험을 경고하기 위한 장치, 이를 위한 방법 및
+          이 방법을 수행하는 프로그램이 기록된 컴퓨터 판독 가능한
+          기록매체
+        </div>
+      </li>
+
+    </ol>
+  </section>
+
+  <section id="affiliations">
+    <h2>Past &amp; present affiliations</h2>
+    <ul class="affil">
+      <li><strong>VENDIT Inc.</strong> — current</li>
+      <li><strong>이모코그 (Emocog)</strong> — wearable health AI</li>
+      <li><strong>모비두 (MOBIDOO)</strong> — streaming media editing</li>
+      <li><strong>한국과학기술연구원 (KIST)</strong> — sports analytics &amp; CV research</li>
+      <li><strong>서울과학기술대학교</strong> — broadcasting &amp; IoT research</li>
+      <li><strong>엠디자인 (M-Design)</strong> — early IoT / industrial safety</li>
+    </ul>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>
+      Email: <a href="mailto:orcogre@gmail.com">orcogre@gmail.com</a><br />
+      GitHub: <a href="https://github.com/zobithecat">@zobithecat</a><br />
+      Work: <a href="mailto:orcogre@vendit.co.kr">orcogre@vendit.co.kr</a>
+    </p>
+  </section>
+
+  <footer>
+    <p class="muted">
+      Built as plain HTML/CSS, no JS, no trackers.
+      <a href="https://github.com/zobithecat/zobithecat.github.io">Source</a>.
+    </p>
+  </footer>
+
+  </main>
+</body>
+</html>
